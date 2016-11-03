@@ -1,0 +1,74 @@
+{
+  "definitions": {
+    "Planning": {
+      "properties": {
+        "milestones": {
+          "description": "A list of milestones associated with the planning stage.",
+          "type": "array",
+          "mergeStrategy": "arrayMergeById",
+          "mergeOptions": {
+            "idRef": "id"
+          },
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        }
+      }
+    },
+    "Award": {
+      "properties": {
+        "milestones": {
+          "description": "A list of milestones associated with the award.",
+          "type": "array",
+          "mergeStrategy": "arrayMergeById",
+          "mergeOptions": {
+            "idRef": "id"
+          },
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        }
+      }
+    },
+    "Milestone": {
+      "properties": {
+        "type": {
+          "title": "Milestone type",
+          "description": "The type of milestone, drawn from the [milestoneType codelist](http://standard.open-contracting.org/latest/en/schema/codelists/#milestone-type).",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "planning",
+            "engagement",
+            "adjudication",
+            "delivery",
+            "reporting",
+            null
+          ],
+          "mergeStrategy": "ocdsVersion"
+        },
+        "dateMet": {
+          "title": "Date met",
+          "description": "The date on which the milestone was met.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "mergeStrategy": "ocdsVersion"
+        },
+        "status": {
+          "enum": [
+            "scheduled",
+            "met",
+            "notMet",
+            "partiallyMet",
+            null
+          ]
+        }
+      }
+    }
+  }
+}

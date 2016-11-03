@@ -1,0 +1,134 @@
+{
+  "definitions": {
+    "Planning": {
+      "properties": {
+        "milestones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        }
+      }
+    },
+    "Award": {
+      "properties": {
+        "milestones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        }
+      }
+    },
+    "Milestone": {
+      "properties": {
+        "type": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "releaseDate": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "releaseID": {
+                "type": "string"
+              },
+              "value": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "planning",
+                  "engagement",
+                  "adjudication",
+                  "delivery",
+                  "reporting",
+                  null
+                ]
+              },
+              "releaseTag": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "dateMet": {
+          "$ref": "#/definitions/StringNullDateTimeVersioned"
+        },
+        "status": {
+          "items": {
+            "properties": {
+              "value": {
+                "enum": [
+                  "scheduled",
+                  "met",
+                  "notMet",
+                  "partiallyMet",
+                  null
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "PlanningUnversioned": {
+      "properties": {
+        "milestones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MilestoneUnversioned"
+          }
+        }
+      }
+    },
+    "AwardUnversioned": {
+      "properties": {
+        "milestones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MilestoneUnversioned"
+          }
+        }
+      }
+    },
+    "MilestoneUnversioned": {
+      "properties": {
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "planning",
+            "engagement",
+            "adjudication",
+            "delivery",
+            "reporting",
+            null
+          ]
+        },
+        "dateMet": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "status": {
+          "enum": [
+            "scheduled",
+            "met",
+            "notMet",
+            "partiallyMet",
+            null
+          ]
+        }
+      }
+    }
+  }
+}
