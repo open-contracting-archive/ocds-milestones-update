@@ -15,39 +15,34 @@
         }
       }
     },
-    "Award": {
-      "properties": {
-        "milestones": {
-          "description": "A list of milestones associated with the award.",
-          "type": "array",
-          "mergeStrategy": "arrayMergeById",
-          "mergeOptions": {
-            "idRef": "id"
-          },
-          "items": {
-            "$ref": "#/definitions/Milestone"
-          }
-        }
-      }
-    },
     "Milestone": {
       "properties": {
         "type": {
           "title": "Milestone type",
-          "description": "The type of milestone, drawn from the [milestoneType codelist](http://standard.open-contracting.org/latest/en/schema/codelists/#milestone-type).",
+          "description": "The type of milestone, drawn from an extended [milestoneType codelist](http://standard.open-contracting.org/latest/en/schema/codelists/#milestone-type).",
           "type": [
             "string",
             "null"
           ],
           "enum": [
-            "planning",
+            "preProcurement",
             "engagement",
-            "adjudication",
+            "approval",
+            "assessment",
             "delivery",
             "reporting",
+            "financial"
             null
           ],
           "mergeStrategy": "ocdsVersion"
+        },
+        "code":{
+          "title":"Milestone code",
+          "description":"Milestone codes can be used to track specific events that take place for a particular kind of contracting process. For example, a code of 'approvalLetter' could be used to allow applications to understand this milestone represents the date an approvalLetter is due or signed. Milestone codes is an open codelist, and codes should be agreed amoungst data producers and the applications using that data.",
+          "type":[
+            "string",
+            "null"
+          ]
         },
         "dateMet": {
           "title": "Date met",
