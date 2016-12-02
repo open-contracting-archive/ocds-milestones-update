@@ -22,17 +22,18 @@ These can all be modelled using the milestones extension.
 
 #### Milestones by section
 
-With this extension in use, a ```milestones``` building block is available in:
+With this extension in use, a ```milestones``` building block is available in the following sections:
 
 * **Planning** - for any milestones relating to the planning process. This is likely to include planning, engagement and approval milestone types.
 * **Tender** - for any milestones relating to the tender process. This is likely to include assessment milestones, and in some cases will include engagement and approval milestones.
-* **Contract** - for any milestones relating to delivery, reporting and financial progress. If these milestones are known at the time of award, but before a contract is signed, they can be indicated using a draft contract block (with ```contract/status``` of ```pending```)
+* **Contract** - for any milestones relating to the signing of the contract itself. 
+* **Implementation** - for any milestones relating to delivery, reporting and financial progress. If these milestones are known at the time of award, but before a contract is signed, they can be indicated using a draft contract block (with ```contract/status``` of ```pending```)
 
 (When used alongside the proposed qualfication stage extension, milestones will also be available for the qualfication stage).
 
 Consuming applications may wish to combine milestones from **planning** and **tender** sections together as these will apply to the whole contracting process.
 
-However, applications should recognise that milestones in the **contract** block are specific to that particular contract, and a single OCID may have multiple contracts related to it (for example, when a single tender is awarded through a number separate contracts).
+Applications may also wish to combine **contract** and **contract/implementation** milestones for each contract. Care should be taken not to aggregate all milestones regardless of the contract they appear in - as different contracts resulting from a single tender may have different milestones. 
 
 #### Milestone types 
 

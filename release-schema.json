@@ -15,6 +15,21 @@
         }
       }
     },
+    "Contract": {
+      "properties": {
+        "milestones": {
+          "description": "A list of milestones associated with the finalisation of this contract.",
+          "type": "array",
+          "mergeStrategy": "arrayMergeById",
+          "mergeOptions": {
+            "idRef": "id"
+          },
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        }
+      }
+    },
     "Milestone": {
       "properties": {
         "type": {
@@ -31,7 +46,7 @@
             "assessment",
             "delivery",
             "reporting",
-            "financial",
+            "financing",
             null
           ],
           "mergeStrategy": "ocdsVersion"
