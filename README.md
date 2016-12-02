@@ -3,7 +3,7 @@
 Many different events occur over the course of a contracting process. OCDS includes core fields for a number of key dates and periods, such as:
 
 * ```tenderPeriod``` 
-* ```awardPeriod``
+* ```awardPeriod```
 * ```contract/period```
 
 However, there are many other key dates that may be scheduled or monitored at various stages of a contracting process. These include:
