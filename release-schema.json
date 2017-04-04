@@ -5,10 +5,6 @@
         "milestones": {
           "description": "A list of milestones associated with the planning stage.",
           "type": "array",
-          "mergeStrategy": "arrayMergeById",
-          "mergeOptions": {
-            "idRef": "id"
-          },
           "items": {
             "$ref": "#/definitions/Milestone"
           }
@@ -20,10 +16,6 @@
         "milestones": {
           "description": "A list of milestones associated with the finalisation of this contract.",
           "type": "array",
-          "mergeStrategy": "arrayMergeById",
-          "mergeOptions": {
-            "idRef": "id"
-          },
           "items": {
             "$ref": "#/definitions/Milestone"
           }
@@ -48,8 +40,7 @@
             "reporting",
             "financing",
             null
-          ],
-          "mergeStrategy": "ocdsVersion"
+          ]
         },
         "code":{
           "title":"Milestone code",
@@ -66,8 +57,7 @@
             "string",
             "null"
           ],
-          "format": "date-time",
-          "mergeStrategy": "ocdsVersion"
+          "format": "date-time"
         },
         "status": {
           "enum": [
